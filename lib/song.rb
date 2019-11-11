@@ -11,8 +11,10 @@ class Song
   end
 
   def self.create
-    Song.new.save
-    self
+    song = self.new
+    
+    @@all << song
+    song
   end
 
   def self.destroy_all
