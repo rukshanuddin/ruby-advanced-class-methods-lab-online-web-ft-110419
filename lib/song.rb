@@ -51,6 +51,11 @@ class Song
 
 
   def self.new_from_filename(filename)
-    @@all.each {|song|}
+    filename_split = filename.split(" - ")
+    filename_split[1] = filename_split[1] - (".mp3")
+    song = self.new
+    song.name = filename_split[1]
+    song.artist_name = filename_split[0]
+    song
   end
 end
